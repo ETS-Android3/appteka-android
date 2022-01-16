@@ -2,7 +2,6 @@ package com.tomclaw.appsend.main.upload;
 
 import android.text.TextUtils;
 
-import com.orhanobut.logger.Logger;
 import com.tomclaw.appsend.core.MainExecutor;
 import com.tomclaw.appsend.main.controller.AbstractController;
 import com.tomclaw.appsend.main.item.CommonItem;
@@ -28,7 +27,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-import static com.microsoft.appcenter.analytics.Analytics.trackEvent;
+import static com.tomclaw.appsend.util.Analytics.trackEvent;
 import static com.tomclaw.appsend.Appteka.app;
 import static com.tomclaw.appsend.core.Config.HOST_URL;
 
@@ -212,7 +211,6 @@ public class UploadController extends AbstractController<UploadController.Upload
                 in = connection.getInputStream();
             }
             String result = HttpUtil.streamToString(in);
-            Logger.json(result);
             JSONObject jsonObject = new JSONObject(result);
             int status = jsonObject.getInt("status");
             switch (status) {
@@ -231,7 +229,6 @@ public class UploadController extends AbstractController<UploadController.Upload
                 }
             }
         } catch (Throwable ex) {
-            Logger.e(ex, "Exception while application uploading");
             onError();
             trackEvent("upload-failed");
         } finally {

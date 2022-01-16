@@ -89,7 +89,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.microsoft.appcenter.analytics.Analytics.trackEvent;
+import static com.tomclaw.appsend.util.Analytics.trackEvent;
 import static com.tomclaw.appsend.main.ratings.RatingsHelper.tintRatingIndicator;
 import static com.tomclaw.appsend.util.ColorHelper.getAttributedColor;
 import static com.tomclaw.appsend.util.FileHelper.getExternalDirectory;

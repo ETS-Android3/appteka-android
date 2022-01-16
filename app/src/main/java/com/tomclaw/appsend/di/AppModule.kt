@@ -2,7 +2,6 @@ package com.tomclaw.appsend.di
 
 import android.app.Application
 import android.content.Context
-import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.tomclaw.appsend.core.Config
 import com.tomclaw.appsend.core.StoreApi
 import com.tomclaw.appsend.net.Session
@@ -52,7 +51,6 @@ class AppModule(private val app: Application) {
     @Provides
     @Singleton
     internal fun provideHttClient(): OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(ChuckerInterceptor.Builder(app).build())
         .build()
 
     @Provides

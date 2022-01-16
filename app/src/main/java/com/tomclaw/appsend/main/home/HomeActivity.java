@@ -1,10 +1,9 @@
 package com.tomclaw.appsend.main.home;
 
-import static com.microsoft.appcenter.analytics.Analytics.trackEvent;
 import static com.tomclaw.appsend.Appteka.getLastRunBuildNumber;
 import static com.tomclaw.appsend.Appteka.wasRegistered;
+import static com.tomclaw.appsend.util.Analytics.trackEvent;
 
-import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,9 +25,6 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.greysonparrelli.permiso.PermisoActivity;
-import com.microsoft.appcenter.AppCenter;
-import com.microsoft.appcenter.analytics.Analytics;
-import com.microsoft.appcenter.crashes.Crashes;
 import com.tomclaw.appsend.R;
 import com.tomclaw.appsend.core.TaskExecutor;
 import com.tomclaw.appsend.main.about.AboutActivity;
@@ -177,8 +173,6 @@ public class HomeActivity extends PermisoActivity implements UserDataListener,
         if (isCreateInstance) {
             checkForUpdates();
         }
-
-        register(getApplication());
 
         checkMigration();
     }
@@ -419,11 +413,6 @@ public class HomeActivity extends PermisoActivity implements UserDataListener,
         if (wasRegistered() && getLastRunBuildNumber() == 0) {
             MigrateActivity_.intent(this).start();
         }
-    }
-
-    private void register(Application application) {
-        String appIdentifier = getAppIdentifier(application.getApplicationContext());
-        AppCenter.start(getApplication(), appIdentifier, Analytics.class, Crashes.class);
     }
 
     private String getAppIdentifier(Context context) {
