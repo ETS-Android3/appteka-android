@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.avito.konveyor.adapter.SimpleRecyclerAdapter
-import com.jakewharton.rxrelay3.PublishRelay
+import com.jakewharton.rxrelay2.PublishRelay
 import com.tomclaw.appsend.R
 import com.tomclaw.appsend.util.clicks
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 
 interface ModerationView {
 

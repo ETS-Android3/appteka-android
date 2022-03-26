@@ -6,7 +6,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import com.jakewharton.rxrelay3.Relay
+import com.jakewharton.rxrelay2.Relay
 
 fun TextView.bind(value: String?) {
     if (TextUtils.isEmpty(value)) {

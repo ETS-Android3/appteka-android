@@ -4,7 +4,7 @@ import com.tomclaw.appsend.core.StoreApi
 import com.tomclaw.appsend.dto.AppEntity
 import com.tomclaw.appsend.net.UserData
 import com.tomclaw.appsend.util.SchedulersFactory
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import java.util.*
 
 interface ModerationInteractor {

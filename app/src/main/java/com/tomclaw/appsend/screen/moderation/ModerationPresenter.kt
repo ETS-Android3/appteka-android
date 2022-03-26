@@ -9,8 +9,8 @@ import com.tomclaw.appsend.screen.moderation.adapter.app.AppItem
 import com.tomclaw.appsend.util.SchedulersFactory
 import com.tomclaw.appsend.screen.moderation.adapter.ItemListener
 import dagger.Lazy
-import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.kotlin.plusAssign
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.plusAssign
 import java.util.ArrayList
 
 interface ModerationPresenter : ItemListener {

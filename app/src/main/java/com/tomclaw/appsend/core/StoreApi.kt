@@ -2,7 +2,7 @@ package com.tomclaw.appsend.core
 
 import com.tomclaw.appsend.dto.StoreResponse
 import com.tomclaw.appsend.screen.moderation.api.ModerationResponse
-import io.reactivex.rxjava3.core.Single
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
